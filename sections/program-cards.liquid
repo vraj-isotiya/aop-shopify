@@ -1,0 +1,106 @@
+<!-- programs -->
+<section class="programs-section" id="{{ section.settings.section_id }}">
+  <div class="container">
+    <div class="row d-flex justify-content-center g-4">
+      {% for block in section.blocks %}
+        <div class="col-lg-3 col-sm-6">
+          <div class="card program-card {{ block.settings.card_css_class }}">
+            <div class="program-card-body">
+              <div class="program-icon">
+                <i class="{{ block.settings.icon_class }}"></i>
+              </div>
+              <div class="program-text-content">
+                <h5 class="program-title">{{ block.settings.program_title }}</h5>
+                <p class="program-grade">{{ block.settings.program_grade }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Programs Section",
+  "tag": "section",
+  "class": "programs-section-wrapper",
+  "max_blocks": 4,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "program_card",
+      "name": "Program Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "card_css_class",
+          "label": "Card CSS Class",
+          "default": "monarch"
+
+        }, {
+          "type": "text",
+          "id": "icon_class",
+          "label": "Font Awesome Icon Class",
+          "default": "fas fa-laptop"
+
+        }, {
+          "type": "text",
+          "id": "program_title",
+          "label": "Program Title",
+          "default": "Monarch"
+        }, {
+          "type": "text",
+          "id": "program_grade",
+          "label": "Program Grade/Subtitle",
+          "default": "Grades 3-12"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Programs Section",
+      "blocks": [
+        {
+          "type": "program_card",
+          "settings": {
+            "card_css_class": "monarch",
+            "icon_class": "fas fa-laptop",
+            "program_title": "Monarch",
+            "program_grade": "Grades 3-12"
+          }
+        }, {
+          "type": "program_card",
+          "settings": {
+            "card_css_class": "lifepac",
+            "icon_class": "fas fa-book-open",
+            "program_title": "Lifepac",
+            "program_grade": "Grades K-12"
+          }
+        }, {
+          "type": "program_card",
+          "settings": {
+            "card_css_class": "horizons",
+            "icon_class": "fas fa-book",
+            "program_title": "Horizons",
+            "program_grade": "Grades PreK-12"
+          }
+        }, {
+          "type": "program_card",
+          "settings": {
+            "card_css_class": "academy",
+            "icon_class": "fas fa-desktop",
+            "program_title": "Academy",
+            "program_grade": "Grades PreK-12"
+          }
+        }
+      ]
+    }
+  ],
+  "enabled_on": {
+    "templates": ["*"]
+  }
+}
+{% endschema %}
