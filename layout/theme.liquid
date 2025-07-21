@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }}</title>
+
+    {% render 'fontawasome' %}
+
+    <!-- Google font  CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+
+    <!-- fontawasome cdn -->
+  {{ 'all.min.css' | asset_url | stylesheet_tag }}
+
+
+    <!-- Bootstrap CSS -->
+  {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+
+    <!-- Shopify Assets -->
+    {{ 'styles.css' | asset_url | stylesheet_tag }}
+    {{ 'program-card.css' | asset_url | stylesheet_tag }}
+    {{ 'product-card.css' | asset_url | stylesheet_tag }}
+    {{ 'bottom-section.css' | asset_url | stylesheet_tag }}
+    {{ 'footer.css' | asset_url | stylesheet_tag }}
+
+
+    {{ content_for_header }}
+  </head>
+  <body class="antialiased">
+
+    {% section 'header' %}
+    {{ content_for_layout }}
+    {% section 'footer' %}
+
+    <!-- Bootstrap JS -->
+    <script src="{{ 'bootstrap.bundle.min.js' | asset_url }}" defer></script>
+
+  </body>
+</html>

@@ -1,0 +1,110 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "phone_text": "Call 1-800-622-3070",
+          "promo_message": "FREE Shipping 20% Off All Products starts 2/2/2022!",
+          "logo_image": "shopify://shop_images/logo.jpg",
+          "main_menu": "aop-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "menu_column_1_RtpFjn": {
+            "type": "menu_column_1",
+            "settings": {
+              "heading": "Solutions",
+              "menu": "aop-footer"
+            }
+          },
+          "menu_column_2_N3AUpR": {
+            "type": "menu_column_2",
+            "settings": {
+              "heading": "Solutions",
+              "menu": "aop-footer"
+            }
+          },
+          "menu_column_3_98YGVA": {
+            "type": "menu_column_3",
+            "settings": {
+              "heading": "Solutions",
+              "menu": "aop-footer"
+            }
+          },
+          "menu_column_4_PyCdyW": {
+            "type": "menu_column_4",
+            "settings": {
+              "heading": "Solutions",
+              "menu": "aop-footer"
+            }
+          },
+          "social_7fn3nP": {
+            "type": "social",
+            "settings": {
+              "icon_class": "fab fa-facebook-f",
+              "social_url": ""
+            }
+          },
+          "social_UyKhgn": {
+            "type": "social",
+            "settings": {
+              "icon_class": "fab fa-instagram",
+              "social_url": ""
+            }
+          },
+          "social_LAiCWg": {
+            "type": "social",
+            "settings": {
+              "icon_class": "fab fa-twitter",
+              "social_url": ""
+            }
+          },
+          "social_Cf68jQ": {
+            "type": "social",
+            "settings": {
+              "icon_class": "fab fa-github",
+              "social_url": ""
+            }
+          },
+          "social_XANzU3": {
+            "type": "social",
+            "settings": {
+              "icon_class": "fab fa-dribbble",
+              "social_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "menu_column_1_RtpFjn",
+          "menu_column_2_N3AUpR",
+          "menu_column_3_98YGVA",
+          "menu_column_4_PyCdyW",
+          "social_7fn3nP",
+          "social_UyKhgn",
+          "social_LAiCWg",
+          "social_Cf68jQ",
+          "social_XANzU3"
+        ],
+        "settings": {
+          "about_heading": "About AOP Lorem Ipsum",
+          "about_text": "The latest homeschool news, articles, and resources, sent to your inbox weekly.",
+          "bottom_text": "Eget consectetur nunc turpis risus. Links.",
+          "contact_widget_text": "Sticky Contact Widget"
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

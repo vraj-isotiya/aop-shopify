@@ -1,0 +1,92 @@
+<section class="bottom-section" id="bottom-section">
+  <div class="container-fluid py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        <h1 class="display-5 fw-bold mb-4">
+          {{ section.settings.main_heading | newline_to_br }}
+        </h1>
+        <p class="fs-5 mb-5 mx-auto" style="max-width: 750px">
+          {{ section.settings.description | newline_to_br }}
+        </p>
+        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+          <a href="{{ section.settings.button_1_link |  default:"#"}}" class="btn btn-bottom-section fw-bold">
+            {{ section.settings.button_1_label }}
+          </a>
+          <a href="{{ section.settings.button_2_link |  default:"#" }}" class="btn btn-bottom-section fw-bold">
+            {{ section.settings.button_2_label }}
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="logo-section my-5" id="logo-section">
+  <div class="container text-center mt-5 mb-5 fw-bold">
+    {{ section.settings.brand_line }}
+  </div>
+  {% if section.settings.brand_logo %}
+    <img
+      height=""
+      width=""
+      class="brands-logo mb-5"
+      src="{{ section.settings.brand_logo | image_url }}"
+      alt="Brands Logo" />
+  {% endif %}
+</section>
+
+{% schema %}
+  {
+    "name": "Bottom CTA Logo Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "main_heading",
+        "label": "Main Heading",
+        "default": "Getting Started With Home Learning Is Easier Than You Think"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Paragraph",
+        "default": "Browse curriculum and resources designed with home learners in mind and subscribe to receive home learning help to your inbox for support along the way."
+      },
+      {
+        "type": "text",
+        "id": "button_1_label",
+        "label": "Button 1 Label",
+        "default": "DOWNLOAD CATALOG"
+      },
+      {
+        "type": "url",
+        "id": "button_1_link",
+        "label": "Button 1 Link"
+      }, {
+        "type": "text",
+        "id": "button_2_label",
+        "label": "Button 2 Label",
+        "default": "SUBSCRIBE FOR HELPFUL TIPS"
+      }, {
+        "type": "url",
+        "id": "button_2_link",
+        "label": "Button 2 Link"
+      }, {
+        "type": "text",
+        "id": "brand_line",
+        "label": "Brand Statement",
+        "default": "AOP has been the leader in award-winning, christian homeschooling for 45 years counting!"
+      }, {
+        "type": "image_picker",
+        "id": "brand_logo",
+        "label": "Brand Logo Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Bottom CTA + Logo",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

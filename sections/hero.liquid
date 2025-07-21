@@ -1,0 +1,65 @@
+<!-- Hero Section -->
+<section
+  class="hero-section "
+  id="hero-section"
+  style="background-image: url( 
+  {% if section.settings.background_image != blank %}
+      {{ section.settings.background_image | image_url }}
+    {% else %}
+      {{ 'hero-background.png' | asset_url }}
+    {% endif %});">
+  <div class="hero-overlay"></div>
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap justify-center">
+      <div class="w-full lg:w-8/12 px-4 hero-content">
+        <h1 class="text-white text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          {{ section.settings.heading | newline_to_br }}
+
+        </h1>
+        <p class="text-white text-lg sm:text-xl mb-8 opacity-95">
+          {{ section.settings.subheading }}
+        </p>
+
+        <button class="btn cta-button text-sm sm:text-base">
+          {{ section.settings.button_text }}
+        </button>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Hero Section",
+    "tag": "section",
+    "class": "hero-section-wrapper",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      }, {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      }, {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Find your family's home learning solution & get 15% off in May."
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "GET STARTED"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Section"
+      }
+    ]
+  }
+{% endschema %}
