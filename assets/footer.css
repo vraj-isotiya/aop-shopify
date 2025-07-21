@@ -1,0 +1,62 @@
+.footer-section {
+  background-color: var(--footer-background);
+  position: relative;
+}
+
+.footer-section ul li a {
+  color: var(--footer-link) !important;
+}
+
+.footer-section ul li a:hover {
+  color: var(--white) !important;
+}
+
+.footer-section .text-secondary {
+  color: var(--footer-text) !important;
+}
+
+.bottom-custom-text,
+.custom-icon {
+  text-decoration: none;
+  color: var(--footer-icon);
+}
+
+/* Specific styling for social icons if not using Font Awesome or similar */
+.footer-section .text-secondary.mx-2 {
+  font-size: 1.2rem;
+}
+
+.footer-section h6 {
+  color: var(--footer-icon);
+}
+
+/* Styling for the sticky contact widget */
+.sticky-contact-widget {
+  position: fixed;
+  bottom: 1px;
+  right: 1px;
+  width: fit-content;
+  z-index: 999;
+  overflow: hidden;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.sticky-contact-widget .btn {
+  padding: 12px 60px;
+  font-size: 15px;
+  border: none;
+  background-color: var(--navbar-background);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  white-space: nowrap;
+  max-width: 90vw;
+  box-sizing: border-box;
+}
+
+.sticky-contact-widget .btn:hover {
+  background-color: var(--footer-btn-sticky);
+}

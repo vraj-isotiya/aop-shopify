@@ -1,0 +1,176 @@
+<section id="footer-section">
+  <footer class="footer-section py-5">
+    <div class="container">
+      <div class="row">
+        {% for block in section.blocks %}
+          {% if block.type contains 'menu_column' %}
+            <div class="col-6 col-md-3 col-lg-2 mb-4">
+              <h6 class="text-uppercase mb-3">{{ block.settings.heading }}</h6>
+              {% if linklists[block.settings.menu] %}
+                <ul class="list-unstyled">
+                  {% for link in linklists[block.settings.menu].links %}
+                    <li>
+                      <a href="{{ link.url }}" class="text-secondary text-decoration-none">
+                        {{ link.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+
+        <div class="col-12 col-lg-4 mb-4">
+          <h6 class="text-uppercase mb-3">{{ section.settings.about_heading }}</h6>
+          <p class="text-secondary">{{ section.settings.about_text }}</p>
+        </div>
+      </div>
+
+      <hr class="border-secondary my-4">
+
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <p class="bottom-custom-text mb-0">{{ section.settings.bottom_text }}</p>
+        </div>
+        <div class="col-12 col-md-6 text-center text-md-end">
+          {% for block in section.blocks %}
+            {% if block.type == 'social' %}
+              <a
+                href="{{ block.settings.social_url }}"
+                class="custom-icon mx-2"
+                target="_blank"
+                rel="noopener">
+                <i class="{{ block.settings.icon_class }}"></i>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<div class="sticky-contact-widget mt-3">
+  <button class="btn btn-lg">{{ section.settings.contact_widget_text }}</button>
+</div>
+
+{% schema %}
+  {
+    "name": "Custom Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "about_heading",
+        "label": "About Section Heading",
+        "default": "About AOP Lorem Ipsum"
+      }, {
+        "type": "textarea",
+        "id": "about_text",
+        "label": "About Section Text",
+        "default": "The latest homeschool news, articles, and resources, sent to your inbox weekly."
+      }, {
+        "type": "text",
+        "id": "bottom_text",
+        "label": "Footer Bottom Text",
+        "default": "Eget consectetur nunc turpis risus. Links."
+      }, {
+        "type": "text",
+        "id": "contact_widget_text",
+        "label": "Sticky Contact Widget Text",
+        "default": "Sticky Contact Widget"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "menu_column_1",
+        "name": "Footer Menu 1",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Menu Heading",
+            "default": "Solutions"
+          }, {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Select Menu"
+          }
+        ]
+      },
+      {
+        "type": "menu_column_2",
+        "name": "Footer Menu 2",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Menu Heading",
+            "default": "Solutions"
+          }, {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Select Menu"
+          }
+        ]
+      },
+      {
+        "type": "menu_column_3",
+        "name": "Footer Menu 3",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Menu Heading",
+            "default": "Solutions"
+          }, {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Select Menu"
+          }
+        ]
+      },
+      {
+        "type": "menu_column_4",
+        "name": "Footer Menu 4",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Menu Heading",
+            "default": "Solutions"
+          }, {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Select Menu"
+          }
+        ]
+      }, {
+        "type": "social",
+        "name": "Social Icon",
+        "settings": [
+          {
+            "type": "text",
+            "id": "icon_class",
+            "label": "Font Awesome Icon Class",
+            "default": "fab fa-facebook-f"
+          }, {
+            "type": "url",
+            "id": "social_url",
+            "label": "Social Media Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Footer",
+        "category": "Footer"
+      }
+    ]
+  }
+{% endschema %}
