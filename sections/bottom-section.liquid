@@ -1,0 +1,87 @@
+<!-- Bottom Section: Moments of Connection & Home Learning Community -->
+<section class="section-bg-blue py-5" id="custome-bottom-section">
+  <div class="container">
+    <div class="row align-items-start">
+      <!-- Left Video Block -->
+      <div class="col-lg-6">
+        <div class="video-wrapper-custom">
+          <iframe
+            width="560"
+            height="315"
+            src="{{ section.settings.video_url }}"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Right Content Block -->
+      <div class="col-lg-6">
+        <p class="text-uppercase-custom mb-2">
+          {{ section.settings.subheading }}
+        </p>
+        <h2 class="heading-2-custom mb-3">
+          {{ section.settings.heading | newline_to_br }}
+        </h2>
+        <p class="paragraph-lg-custom mb-4">
+          {{ section.settings.description }}
+        </p>
+        {% if section.settings.button_link != blank %}
+          <a href="{{ section.settings.button_link }}" class="btn btn-primary-custom">
+            {{ section.settings.button_text }}
+          </a>
+        {% else %}
+          <button class="btn btn-primary-custom">{{ section.settings.button_text }}</button>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Bottom Blue Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "video_url",
+        "label": "YouTube Embed URL",
+        "default": "https://www.youtube.com/embed/LD8pokENoLg?si=M0_iOCr4PnWCC6m6"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Join the Home Learning Community"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Main Heading",
+        "default": "Curious If Home Learning Is Right For You?"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Paragraph Text",
+        "default": "Explore moments of connection with real AOP families to hear the highlights and obstacles from their home learning journeys or schedule a call with one of our friendly and helpful home-learning experts to get your questions answered!"
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "GET STARTED"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Bottom Blue Section",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}
